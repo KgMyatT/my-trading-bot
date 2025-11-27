@@ -8,11 +8,28 @@ __pycache__/
 *.log
 
 # Terraform
+.terraform/
 infra/.terraform/
 infra/.terraform.lock.hcl
-infra/*.tfstate
+*.tfstate
+*.tfstate.*
 infra/*.tfstate.backup
 infra/crash.log
+crash.log
+crash.*.log
+
+# Terraform variables and overrides
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform lock and CLI files
+.terraform.tfstate.lock.info
+.terraformrc
+terraform.rc
 
 # OS
 .DS_Store
