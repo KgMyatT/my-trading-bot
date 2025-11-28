@@ -25,6 +25,22 @@ variable "github_repo_url" {
   type        = string
 }
 
-variable "vm_name" { type = string, default = "trading-bot-vm" }
-variable "docker_image" { type = string } # e.g. gcr.io/PROJECT/mytradingbot:latest
-variable "machine_type" { type = string, default = "e2-medium" }
+variable "vm_name" {
+  type    = string
+  default = "trading-bot-vm"
+}
+
+variable "docker_image" {
+  type = string
+} # e.g. gcr.io/PROJECT/mytradingbot:latest
+
+variable "machine_type" {
+  type    = string
+  default = "e2-medium"
+}
+
+variable "service_account_name" {
+  description = "Name for the service account used by the trading bot"
+  type        = string
+  default     = "trading-bot-sa"
+}

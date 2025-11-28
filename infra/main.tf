@@ -56,8 +56,8 @@ resource "google_compute_instance" "vm" {
   }
 
   metadata = {
-    # startup script installs docker and starts container
-    startup-script = file("${path.module}/startup-script.sh")
+    # startup script installs docker and starts container (templated with Docker image)
+    startup-script = templatefile("${path.module}/startup-script.sh.tpl", { docker_image = var.docker_image })
   }
 
   service_account {
